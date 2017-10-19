@@ -74,7 +74,7 @@ class SolveMaze(object):
     def show(self, array):
         return [print(''.join(line)) for line in array]
 
-with open('mazeExamples/labirynt3.txt', 'r') as f:
+with open('mazeExamples/labirynt1.txt', 'r') as f:
     mapFile = [list(line.strip()) for line in f]
 
 # First line of maze txt contains height and width value
