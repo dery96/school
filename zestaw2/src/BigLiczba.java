@@ -1,5 +1,5 @@
 public class BigLiczba {
-    int liczba;
+    private int liczba;
 
     BigLiczba(int liczba) {
         this.liczba = liczba;
@@ -15,7 +15,8 @@ public class BigLiczba {
                 29, 31, 37, 41, 43, 47, 53, 59,
                 61, 67, 71, 73, 79, 83, 89, 97
         };
-        for (int i = 0; i < primary_numbers.length; i++) {
+        for (int i : primary_numbers) {
+            // Tzw ForEach iterowanie po arrayu
             if (liczba % primary_numbers[i] == 0) {
                 return true;
             }

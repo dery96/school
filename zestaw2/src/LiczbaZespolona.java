@@ -1,6 +1,6 @@
 public class LiczbaZespolona {
-    int a;
-    int i;
+    private int a;
+    private int i;
 
     LiczbaZespolona(int a, int i) {
         this.a = 0;
