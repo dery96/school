@@ -17,7 +17,7 @@ public class Ulamek {
         return "[" + a + "/" + b + "]";
     }
 
-     public Ulamek dodaj (Ulamek obj) {
+    public Ulamek dodaj(Ulamek obj) {
         int tmp_a;
         int tmp_b;
         if (b != obj.b) {
@@ -31,18 +31,20 @@ public class Ulamek {
     }
 
     public Ulamek minus(Ulamek obj) {
+        int tmp_a, tmp_b;
+        System.out.println(b);
         if (b != obj.b) {
-            a = a * obj.b - b * obj.a;
-            b = a * obj.b;
+            tmp_a = a * obj.b - obj.a * b;
+            tmp_b = b * obj.b;
+        } else {
+            tmp_a = a - obj.a;
+            tmp_b = b;
         }
-        a -= obj.a;
-        return new Ulamek(a, b);
+        return new Ulamek(tmp_a, tmp_b);
     }
 
     public Ulamek razy(Ulamek obj) {
-        a *= obj.a;
-        b *= obj.b;
-        return new Ulamek(a, b);
+        return new Ulamek(a * obj.a,b * obj.b);
     }
 
     void odwroc() {
@@ -51,8 +53,19 @@ public class Ulamek {
         a = b;
         b = tmp;
     }
-
-    void skroc() {
+    int nwd(int a, int b) {
+        while (a != b) {
+            if (a < b) {
+                b -= a;
+            } else {
+                a -= b;
+            }
+        }
+        return a;
+    }
+    void skrocPoprzezPetle() {
+        // Dwie metody 1* dzielenie liczb pierwszych
+        // 2* dzielenie NWD dwóch tych liczb.
         int[] primary_numbers = {
                 2, 3, 5, 7, 11, 13, 17, 19, 23,
                 29, 31, 37, 41, 43, 47, 53, 59,
@@ -66,9 +79,16 @@ public class Ulamek {
         }
         System.out.println("skracamy ulamek: " + a + " / " + b);
     }
+    void skrocPoprzedNwd() {
+        System.out.println("przed skróceniem: " + a + " / " + b);
+        int tmp_a = a / nwd(a, b);
+        b /= nwd(a, b);
+        a = tmp_a;
+        System.out.println("po skróceniu: " + a + " / " + b);
+    }
 
     double rozwDziesietne() {
-        double a_double = (double)a;
+        double a_double = (double) a;
         return (a_double / b);
     }
 

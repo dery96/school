@@ -3,8 +3,8 @@ public class LiczbaZespolona {
     private int i;
 
     LiczbaZespolona(int a, int i) {
-        this.a = 0;
-        this.i = 0;
+        this.a = a;
+        this.i = i;
     }
 
     public LiczbaZespolona dodaj(LiczbaZespolona obj) {
@@ -26,6 +26,12 @@ public class LiczbaZespolona {
     }
 
     public String toString() {
-        return super.toString();
+        String strA = (a == 1) ? "a " : a + "a ";
+        strA = (a == 0) ? "" : strA;
+
+        String strI = (i > 0) ? "+ " + i : "" + i;
+        strI = (i == 0) ? "" : strI;
+
+        return strA + strI + "i ";
     }
 }
