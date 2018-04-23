@@ -1,0 +1,2 @@
+To jest plik tekstowy który chciałbym przesłać z serwera na przeglądarkę
+dlatego ten plik jest taki fajny bo do tego służy.
